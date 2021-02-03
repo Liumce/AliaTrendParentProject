@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: index-config-server
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://gitee.com/SunHuaqiang/trendConfig
+          searchPaths: respo
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

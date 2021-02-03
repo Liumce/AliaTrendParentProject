@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="include/header::html('趋势投资模拟回测')" ></head>
+  <body style="font-size:16px">
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <h5 class="my-0 mr-md-auto font-weight-normal"><a class="btn btn-default" role="button" href="http://127.0.0.1:8042/">首页</a></h5>
+      <nav class="my-2 mr-md-3">
+        <a class="btn btn-default" role="button" href="https://blog.csdn.net/sinat_38239454?spm=1010.2135.3001.5421">了解作者</a>
+      </nav>	  
+    </div>
+
+    <div class="container" style="max-width: 960px">
+      <div class="row">
+        <div class="col-12 col-md">
+          <form method="post" action="/register" class="form-horizontal">
+			  <h3 align="center">注册账户</h3>
+			  <div th:if="${error!=null}" class="form-group">
+				<p id="error" class="text-danger" th:text="${error}"></p>
+			  </div>
+			  <div class="form-group">
+				<label>邮箱</label>
+				<input name="email" type="email" class="form-control" placeholder="Email">
+			  </div>
+			  <div class="form-group">
+				<label>密码</label>
+				<input name="password" type="password" class="form-control" placeholder="Password" minlength="6" maxlength="20">
+			  </div>
+			  <div class="form-group">
+				<label>姓名</label>
+				<input name="name" type="text" class="form-control" placeholder="Name" minlength="1" maxlength="50">
+			  </div>
+			  <div class="form-group" style="text-align: right">
+				<button type="submit" class="btn btn-outline-primary" >提交</button>
+			  </div>
+			  <div class="form-group">
+				<a href="/signin">您是否已经注册过账户?</a>
+			  </div>
+		  </form>
+        </div>
+      </div>
+    </div>
+	<div th:replace="include/footer::html" ></div>
+  </body>
+</html>

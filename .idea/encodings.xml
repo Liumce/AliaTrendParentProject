@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/User-register-signin-view" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index-codes-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index-config-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index-data-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index-gather-store-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index-hystrix-dashboard" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index-turbine" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index-zuul-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/third-part-index-data-project" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trend-trading-backtest-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trend-trading-backtest-view" charset="UTF-8" />
+  </component>
+</project>

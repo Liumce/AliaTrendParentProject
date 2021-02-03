@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="include/header::html('趋势投资模拟回测')" ></head>
+  <body style="font-size:16px">
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <h2 class="my-0 mr-md-auto font-weight-normal"><p class="bg-warning" align="center">趋势投资模拟回测登录页</p> </h2>
+    </div>
+
+    <div class="container" style="max-width: 960px">
+      <div class="row">
+        <div class="col-12 col-md">
+          <form method="post" action="/signin">
+		  <h3 align="center">用户登陆</h3>
+		  <div class="form-group">
+			<p th:if="${error!=null}" id="error" class="text-danger" th:text="${error}"></p>
+		  </div>
+		  <div class="form-group">
+			<label>邮箱</label>
+			<input name="email" type="email" class="form-control" placeholder="Email" >
+		  </div>
+		  <div class="form-group">
+			<label>密码</label>
+			<input name="password" type="password" class="form-control" placeholder="Password">
+		  </div>
+		  <div class="form-group">
+			<button type="submit" class="btn btn-outline-primary">提交</button>
+		  </div>
+		  <div class="form-group">
+			<a href="/register">若无账户，请注册账户?</a>
+		  </div>
+		</form>
+        </div>
+      </div>
+    </div>
+	<div th:replace="include/footer::html" ></div>
+  </body>
+</html>

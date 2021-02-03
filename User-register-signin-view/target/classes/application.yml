@@ -1,0 +1,31 @@
+server:
+  port: 8042
+spring:
+  application:
+    name: User-register-signin-view
+  thymeleaf:
+    mode: LEGACYHTML5
+    encoding: UTF-8    # 模板文件使用的编码
+    servlet:
+      content-type: text/html  #写入Http response中的类型
+    cache: false    # 是否开启模板缓存
+  zipkin:
+    base-url: http://localhost:9411
+  datasource:
+    #############MySQL数据库：url中需要设定一个mybatisDatabase
+    url: jdbc:mysql://localhost:3306/mybatisDatabase?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: root
+    dirver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    schema:
+      - classpath:sql/department.sql
+    initialization-mode: always
+
+mybatis:
+  #mapper-locations: classpath:/*Mapper.xml
+  type-aliases-package: cn.how2j.trend.entity
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

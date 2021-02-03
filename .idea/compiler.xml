@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eureka-server" />
+        <module name="index-codes-service" />
+        <module name="index-config-server" />
+        <module name="index-data-service" />
+        <module name="index-gather-store-service" />
+        <module name="index-hystrix-dashboard" />
+        <module name="index-turbine" />
+        <module name="index-zuul-service" />
+        <module name="third-part-index-data-project" />
+        <module name="trend-trading-backtest-service" />
+        <module name="trend-trading-backtest-view" />
+        <module name="User-register-signin-view" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="User-register-signin-view" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
+      <module name="index-codes-service" options="-parameters" />
+      <module name="index-config-server" options="-parameters" />
+      <module name="index-data-service" options="-parameters" />
+      <module name="index-gather-store-service" options="-parameters" />
+      <module name="index-hystrix-dashboard" options="-parameters" />
+      <module name="index-turbine" options="-parameters" />
+      <module name="index-zuul-service" options="-parameters" />
+      <module name="third-part-index-data-project" options="-parameters" />
+      <module name="trend-trading-backtest-service" options="-parameters" />
+      <module name="trend-trading-backtest-view" options="-parameters" />
+    </option>
+  </component>
+</project>
