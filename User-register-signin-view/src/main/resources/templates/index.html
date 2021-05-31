@@ -1,25 +1,38 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:include="include/header::html('首页')" ></head>
-  <body style="font-size:16px">
-    <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
-      <h3>“趋势投资模拟回测”分析系统首页</h3>
-        <p>该项目是基于<code>SpringCloud</code>框架构建的，用户需要注册账号登陆后才可进入趋势投资预测网站。通过<code>Redis</code>缓存从第三方获取股票指数，
-            并定时更新<code>Redis</code>缓存数据，依据股票指数数据分析投资趋势，给出投资意见；并将项目部署在<code>Docker</code>容器中。</p>
-    </div>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>趋势投资分析系统模拟回测登录界面</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{webjars/bootstrap/3.3.7/css/bootstrap.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/signin.css}" rel="stylesheet">
+</head>
 
-    <div class="container" style="max-width: 960px">
-      <div class="row">
-        <div class="col-12 col-md">
-          <div th:if="${user==null}">
-			<h3>欢迎!</h3>
-			<p><a href="/signin">登陆</a> 或者 <a href="/register">注册</a>
-		  </div>
-		  <div th:if="${user!=null}">
-			<h3>欢迎!<span th:text="${user.name}"></span></h3>
-          </div>
-      </div>
+<body class="text-center">
+<form class="form-sign-in" action="view.html">
+    <img class="mb-4" th:src="@{img/trend.png}" alt="" width="500" height="140">
+    <h1 class="h3 mb-3 font-weight-normal">请登录</h1>
+    <!--    placeholder是html5的新特性，用于实现输入框里那个浅色的输入提示-->
+    <label class="sr-only">Username</label>
+    <input type="name" class="form-control" placeholder="用户名" required="" autofocus="">
+    <label class="sr-only">Password</label>
+    <input type="password" class="form-control" placeholder="密码" required="">
+    <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" value="remember-me"> 记住我
+        </label>
     </div>
-	<div th:replace="include/footer::html" ></div>
-  </body>
+    <button class="btn btn-lg btn-primary btn-block" type="submit"><a href="/signin">登录</a></button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit"><a href="/register">注册</a></button>
+    <p class="mt-5 mb-3 text-muted">© 2020-2021</p>
+    <a class="btn btn-sm">中文</a>
+    <a class="btn btn-sm">English</a>
+</form>
+
+</body>
+
 </html>

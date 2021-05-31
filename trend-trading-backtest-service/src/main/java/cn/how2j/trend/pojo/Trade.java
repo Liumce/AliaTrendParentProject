@@ -1,5 +1,7 @@
 package cn.how2j.trend.pojo;
 
+
+//交易类：用于记录交易的购买日期，出售日期，购买盘点，出售盘点，收益
 public class Trade {
 
     private String buyDate; //购买日期

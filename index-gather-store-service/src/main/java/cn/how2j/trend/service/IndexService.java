@@ -16,13 +16,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+
+//从指数类获取指数信息,并用list存储
 @Service
-@CacheConfig(cacheNames = "indexes")
+@CacheConfig(cacheNames = "indexes")   //缓存的名称是 indexes.共享公共缓存相关设置
 public class IndexService {
     private List<Index> indexes;
     @Autowired
     RestTemplate restTemplate;
 
+
+    //这种方式属于硬编码，稍后可修改
+    //当该方法回退时
     @HystrixCommand(fallbackMethod = "third_part_not_connected")
     public List<Index> fresh() {
         indexes = fetch_indexes_from_third_part();
@@ -36,13 +41,13 @@ public class IndexService {
 
     }
 
-    @Cacheable(key = "'all_codes'")
+    @Cacheable(key = "'all_codes'") // 表示保存到 redis 用的 key是all_codes
     public List<Index> store() {
         System.out.println(this);
         return indexes;
     }
 
-    @Cacheable(key = "'all_codes'")
+    @Cacheable(key="'all_codes'",unless = "#result.isEmpty()")
     public List<Index> get() {
         return CollUtil.toList();
     }
@@ -66,6 +71,7 @@ public class IndexService {
         return indexes;
     }
 
+    //HystrixCommand的fallback方法
     public List<Index> third_part_not_connected() {
         System.out.println("third_part_not_connected()");
         Index index = new Index();

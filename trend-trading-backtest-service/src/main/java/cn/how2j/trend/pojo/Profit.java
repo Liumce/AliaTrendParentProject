@@ -1,5 +1,6 @@
 package cn.how2j.trend.pojo;
 
+//利润类，与indexDate对比
 public class Profit {
     String date;
     float value;

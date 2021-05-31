@@ -17,6 +17,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.time.Duration;
 
+//这是一个配置bean，从.yml文件中选择前缀读取相关信息
 @Configuration
 @ConfigurationProperties(prefix = "spring.cache.redis")
 public class RedisCacheConfig {

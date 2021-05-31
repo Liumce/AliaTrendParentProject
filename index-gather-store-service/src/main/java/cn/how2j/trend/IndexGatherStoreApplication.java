@@ -12,10 +12,19 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+
+
+/*采集使用的是 RestTemplate 方式来做，
+ *   存储本地我们会采用 nosql redis 来保存。
+ * http://localhost:8001/getCodes
+ * http://127.0.0.1:8001/removeIndexData/000300
+ * http://127.0.0.1:8001/getIndexData/000300
+ * http://127.0.0.1:8001/freshIndexData/000300
+ */
 @SpringBootApplication
 @EnableEurekaClient
-@EnableHystrix
-@EnableCaching
+@EnableHystrix  //启动Hystrix为微服务提供容错处理，防止雪崩效应
+@EnableCaching  //启动缓存
 public class IndexGatherStoreApplication {
     public static void main(String[] args) {
 

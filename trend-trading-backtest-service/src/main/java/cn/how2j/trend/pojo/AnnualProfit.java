@@ -1,5 +1,7 @@
 package cn.how2j.trend.pojo;
 
+
+//每年收益实体类，字段为：年份，指数收益，趋势收益
 public class AnnualProfit {
 
     private int year;

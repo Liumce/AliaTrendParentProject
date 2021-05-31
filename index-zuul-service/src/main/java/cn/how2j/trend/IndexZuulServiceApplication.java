@@ -9,6 +9,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 
+
+//开启了Zuul代理，Zuul代理整合了Ribbon和Hystrix
 @SpringBootApplication
 @EnableZuulProxy
 @EnableEurekaClient
@@ -25,6 +27,7 @@ public class IndexZuulServiceApplication {
         new SpringApplicationBuilder(IndexZuulServiceApplication.class).properties("server.port=" + port).run(args);
 
     }
+    //用于服务的跟踪，表示一直在取样
     @Bean
     public Sampler defaultSampler() {
         return Sampler.ALWAYS_SAMPLE;

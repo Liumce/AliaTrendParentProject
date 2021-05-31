@@ -5,6 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
+/**
+ * 服务链路追踪 ：java -jar zipkin-server-2.10.1-exec.jar
+ * 后访问地址：http://127.0.0.1:8031/api-view/
+ */
 @SpringBootApplication
 @EnableEurekaServer
 public class EurekaServerApplication {

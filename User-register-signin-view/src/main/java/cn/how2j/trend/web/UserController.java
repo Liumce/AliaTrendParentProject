@@ -87,7 +87,7 @@ public class UserController {
 			model.put("error", "Signin failed");
 			return new ModelAndView("signin.html", model);
 		}
-		return new ModelAndView("redirect:/view");
+		return new ModelAndView("redirect:http://127.0.0.1:8031/api-view/view");
 	}
 
 	@GetMapping("/profile")

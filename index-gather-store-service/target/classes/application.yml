@@ -5,3 +5,5 @@ eureka:
 spring:
   application:
     name: index-gather-store-service
+
+    hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 3000

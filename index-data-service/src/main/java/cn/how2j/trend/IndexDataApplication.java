@@ -18,6 +18,17 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+
+
+/*将获取指数所有代码单独作为一个微服务,只读方式
+ *
+ *   为了使用集群,指数代码微服务会有多个实例，
+ * 2 单独的采集和存储服务由于里面有定时器,若做成集群,就会有多个定时器同时工作
+ * 3 一起向第三方获取数据, 一起把数据保存到redis里，这会造成开销，还可能存在数据冲突
+ * 4 所以单独将获取指数代码单独作为一个微服务，这个服务中不涉及对写数据，只涉及读数据
+ *
+ * http://127.0.0.1:8021/data/000300
+ */
 @SpringBootApplication
 @EnableEurekaClient
 @EnableCaching

@@ -21,6 +21,14 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+
+
+/**模拟回测微服务  -- 这里实现了微服务得容错处理和Rest API的访问
+ * 给模拟回测视图提供数据，
+ * 通过Feign，从index-data-service微服务中获取指定code对应的indexData
+ * 提供给回测视图
+ *
+ */
 @SpringBootApplication
 @EnableEurekaClient
 @EnableDiscoveryClient

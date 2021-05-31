@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
+//保存第三方数据：http://localhost:8090/indexes/codes.json
 @SpringBootApplication
 @EnableEurekaClient
 public class ThirdPartIndexDataApplication {

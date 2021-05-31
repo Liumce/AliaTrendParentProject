@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+// @Controller and @ResponseBody.
 @RestController
 public class IndexDataController {
     @Autowired
@@ -18,6 +19,26 @@ public class IndexDataController {
 //  http://127.0.0.1:8001/getIndexData/000300
 //  http://127.0.0.1:8001/removeIndexData/000300
 
+    /*
+    //刷新Redis获取到的数据
+    @GetMapping("/freshCodes")
+    public List<Index> fresh() throws Exception {
+        return indexService.fresh();
+    }
+
+    //从Redis中获取index数据
+    @GetMapping("/getCodes")
+    public List<Index> get() throws Exception {
+        return indexService.get();
+    }
+
+    //清空Redis数据
+    @GetMapping("/removeCodes")
+    public String remove() throws Exception {
+        indexService.remove();
+        return "remove codes successfully";
+    }
+    */
     @GetMapping("/freshIndexData/{code}")
     public String fresh(@PathVariable("code") String code) throws Exception {
         indexDataService.fresh(code);

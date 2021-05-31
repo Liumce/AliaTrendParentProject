@@ -7,6 +7,9 @@ spring:
     name: index-zuul-service
   zipkin:
     base-url: http://localhost:9411
+# zuul会代理所有注册在Eureka Server上的微服务,并且Zuul路由规则如下：
+# http://Zuul_Host:Zuul_port/微服务在eureka上的serviceID  被转发到相应的 微服务
+# 下面进行路由配置：同时指定微服务的serviceID和对应路径
 zuul:
   routes:
     api-a:

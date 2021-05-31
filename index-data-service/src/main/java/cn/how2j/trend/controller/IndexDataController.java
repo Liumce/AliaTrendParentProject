@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+
+/* 返回指数代码集合
+ *  并通过IpConfiguration获取当前port并打印
+ */
 @RestController
 public class IndexDataController {
     @Autowired

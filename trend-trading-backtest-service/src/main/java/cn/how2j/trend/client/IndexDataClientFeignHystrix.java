@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+//当被调用的微服务index-data-service不可用或者不可访问时，发生回退
 @Component
 public class IndexDataClientFeignHystrix implements IndexDataClient {
     @Override
